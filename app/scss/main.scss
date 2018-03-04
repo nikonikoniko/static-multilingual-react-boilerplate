@@ -1,0 +1,46 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.2.14/spectre.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.2.14/spectre-exp.min.css');
+@import url('https://unpkg.com/react-select/dist/react-select.css');
+
+$orange: #fb8520;
+$blue: #2a98b7;
+$background: #f2f2f2;
+$dark: #444;
+$beige: #fff9d6;
+
+@import "typography";
+@import "colors";
+@import "grid";
+@import "card";
+@import "top";
+@import "modal";
+@import "article";
+
+html.ar{
+  $color:#91c76a;
+  @import "rtl";
+}
+
+.breadcrumbs{
+  margin-top:-1rem;
+  margin-bottom:1rem;
+  font-style: oblique;
+  font-style: italic;
+  .bc{
+    a{
+      font-size:1.3rem;
+      color:#666;
+    }
+    &:after{
+      font-size:1.3rem;
+      color:#666;
+      content:">";
+    }
+    &:last-child:after{
+      content:":";
+    }
+    &:last-child{
+      font-weight:bold;
+    }
+  }
+}

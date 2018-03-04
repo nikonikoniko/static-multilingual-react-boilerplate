@@ -1,0 +1,9 @@
+ <div class="breadcrumbs">
+  {% for bc in url|splitminuslast("/") %}
+    <span class="bc">
+      <a href="/{{url|jointill(bc)}}">
+        {{url|jointill(bc)|findtitle(all)}}
+      </a>
+    </span>
+  {% endfor%}
+</div>

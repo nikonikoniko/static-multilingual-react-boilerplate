@@ -1,0 +1,20 @@
+body {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Droid Arabic Naskh' !important;
+  p, h1, h2, h3, h4, h5, h6{
+    font-family: 'Droid Arabic Naskh' !important;
+  }
+  article{
+    p, h1, h2, h3, h4, h5, h6{
+      font-family: 'Droid Arabic Naskh' !important;
+    }
+  }
+  ol, ul {margin: 2rem 2rem 2rem 2rem};
+
+
+}
+
+.card a .card-title {
+  font-family: 'Droid Arabic Naskh' !important;
+}

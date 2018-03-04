@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block extraheadjs %}
+    var language = window.navigator.userLanguage || window.navigator.language;
+
+    if (language.includes('ar')) {
+      window.location.replace('ar');
+      locale='ar';
+    }
+    window.location.replace('en');
+    locale='en';
+    alert(language);
+{% endblock %}

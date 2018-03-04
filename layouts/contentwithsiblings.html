@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+
+  {% block content %}
+
+    <div class="container maincontent">
+      <div class="columns">
+
+        <div class="col-8 col-sm-12 maintext">
+          {{ contents|safe }}
+        </div>
+
+        <div class="col-1 col-sm-12"></div>
+
+        <div class="col-3 col-sm-12 sidebar">
+
+          {% include 'includes/cardlist.html' %}
+        </div>
+      </div>
+    </div>
+  {% endblock %}

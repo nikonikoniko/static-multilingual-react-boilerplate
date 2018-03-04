@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block htmlclass %}
+  home
+{% endblock %}
+
+{% block title %}
+  <h1>{{ title }}</h1>
+  <div class="desc">
+  </div>
+{% endblock %}
+
+  {% block content %}
+
+  <div class="container intro">
+
+    <div class="columns">
+      <div class = "col-12 col-sm-12">
+        <h3>{{desc}}</h3>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class = "col-6 col-sm-12">
+        {{ contents|safe }}
+      </div>
+    </div>
+
+  <div id="js-root"></div>
+
+  <div class="columns lotsacards">
+
+    <div class="col-6 col-sm-6 padright">
+        {% set items = latest  | sort(true, true, 'date') %}
+
+      <div class="container investigations">
+
+
+        <div class="limiter columns">
+        {% for post in items  | sort(true, true, 'date')%}
+          {% if post.locale === locale and post.title != title %}
+            <div class="col-12 col-sm-12">
+                {% include 'includes/card.html' %}
+              </div>
+          {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+
+
+    <div class = "col-6 col-sm-12 flx">
+    {% for post in siblings  | sort(true, true, 'date')%}
+      {% if post.locale === locale and post.title != title %}
+        <div class="fll">
+            {% include 'includes/card.html' %}
+          </div>
+      {% endif %}
+    {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+  {% endblock %}
+
+  {% block jstop %}
+  {% endblock %}
+
+
+{% block jsbottom %}
+{% endblock %}

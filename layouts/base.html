@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="{{locale}} {% block htmlclass %}{% endblock %}">
+<head>
+  <title>{{title}} | {{sitename}} | {{locale}}</title>
+
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow, noodp">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+  <meta name="description" content="{{title}} - {{desc}}">
+
+  <meta name="twitter:card" content="{{desc}} | {{sitename}}">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:creator" content="">
+  <meta property="og:url" content="FILLINURL{{url}}">
+  <meta property="og:title" content="{{title}} | {{sitename}}">
+  <meta property="og:description" content="{{desc}} | {{sitneame}}">
+  <meta property="og:image" content="FILLINURL{{image}}">
+  <meta name="twitter:url" content="FILLINURL/{{url}}">
+  <meta name='twitter:image' content='FILLINURL{{image}}'>
+
+  <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+
+  {% if locale === "ar"%}
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-naskh" type="text/css"/>
+  {%endif%}
+
+  <script type="text/javascript">
+    const locale = "{{locale}}";
+    {% block extraheadjs %}
+    {% endblock %}
+  </script>
+
+  <link rel='stylesheet'  href='/assets/styles.bundle.css' />
+</head>
+<body class="{{name}}page">
+
+  <div class="container top">
+    <div class="columns">
+      <div class="col-12 nav">
+        <header class="navbar">
+
+          <section class="navbar-section">
+            {% if locale === "ar"%}
+
+            {% else %}
+
+            {% endif %}
+          </section>
+
+          <section class="navbar-section">
+          </section>
+          <section class="navbar-section">
+
+          </section>
+
+          <section class="navbar-section">
+            <!-- <a href="/">
+              <img src="/assets/syrian_archive_logo_landscape.png" />
+            </a> -->
+          </section>
+
+          <section class="navbar-section">
+          </section>
+          <section class="navbar-section">
+          </section>
+
+          <section class="navbar-section">
+            <a class="btn btn-link" href="{{ url | l('ar')}}">
+              {% if locale === "ar"%}<b>{%endif%}
+              ع
+              {% if locale === "ar"%}</b>{%endif%}
+            </a>
+            <a class="btn btn-link" href="{{ url | l('en')}}">
+              {% if locale === "en"%}<b>{%endif%}
+              en
+              {% if locale === "en"%}</b>{%endif%}
+            </a>
+          </section>
+
+        </header>
+      </div>
+    </div>
+  </div>
+
+{% block titlecontainer %}
+  <div class="container title">
+    <div class="columns">
+      <div class="col-12">
+        {% block title %}
+          {% include 'includes/breadcrumbs.html' %}
+          <h1>{{ title }}</h1>
+          <div class="desc">
+            {{desc}}
+          </div>
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+  <article class="contents">
+    {% block jstop %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+  </article>
+
+
+  {% block jsbottom %}
+    <div id="js-root"></div>
+  {% endblock %}
+
+
+
+  <div class="container footer">
+    <div class="columns">
+      <div class="col-12 nav">
+        <header class="navbar">
+
+          <section class="navbar-section">
+              Footer
+          </section>
+
+          <section class="navbar-section">
+          </section>
+
+          <section class="navbar-section">
+
+          </section>
+        </header>
+      </div>
+    </div>
+  </div>
+
+  {% block bundlejs %}
+    <script src="/assets/app.bundle.js"></script>
+  {% endblock %}
+
+</body>
+</html>

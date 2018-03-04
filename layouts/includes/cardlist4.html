@@ -1,0 +1,13 @@
+  <div class="col-5 col-sm-12 maintext margright">
+    {{ contents|safe }}
+  </div>
+
+<div class = "col-7 col-sm-12 flx">
+{% for post in siblings|sort(attribute='date')%}
+  {% if post.locale === locale and post.title != title %}
+    <div class="fl">
+        {% include 'includes/card.html' %}
+      </div>
+  {% endif %}
+{% endfor %}
+</div>

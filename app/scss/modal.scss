@@ -1,0 +1,44 @@
+.modal.active .modal-container {
+  max-width: 100%;
+}
+.modal-container .modal-body{
+  max-height: 100000px;
+}
+
+.modal {
+  top: 0;
+  bottom: none !important;
+  position:fixed;
+  max-height:100vh;
+  overflow-y: scroll;
+  -webkit-align-items:start;
+    align-items:start;
+    bottom: 0;
+    display: none;
+    -ms-flex-align:start;
+    -ms-flex-pack:start;
+    -webkit-justify-content:start;
+    justify-content:start;
+    left: 0;
+    opacity: 0;
+    padding: 1rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    max-width: 100%;
+    max-width: 100vw;
+}
+
+.modal-overlay {
+  position: fixed !important;
+}
+
+.modal-container{
+  margin:3em auto;
+}
+
+.modal-header{
+  text-align: center;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #ddd;
+}
